@@ -1,31 +1,31 @@
 ## How to install ex. Linux
 
-# First, you should access "http://libevent.org/" and download source file(ex. libevent-2.0.22-stable.tar.gz) and you should excute following two commands.
+# First, you should access "http://libevent.org/" and download source file(ex. libevent-2.0.22-stable.tar.gz) and you should execute following two commands.
 
 ./configure --prefix=/usr --disable-static && make
 make install
 
 
-# Second, you should excute "mkdir key" and excute following three commands in "key" direcotry, and then you could generate a key and self-signed cerificate.
+# Second, you should execute "mkdir key" and execute following three commands in "key" direcotry, and then you could generate a key and self-signed cerificate.
 
 openssl genrsa -out pkey 2048
 openssl req -new -key pkey -out cert.req
 openssl x509 -req -days 365 -in cert.req -signkey pkey -out cert
 
 
-# If you excute "make" and get error,"error: openssl/ssl.h: No such file or directory", you should excute following command
+# If you execute "make" and get error,"error: openssl/ssl.h: No such file or directory", you should execute following command
 
 sudo apt-get install libssl-dev
 
 
-# Third, you should excute "make"
+# Third, you should execute "make"
 
 
-## How to excute
-You should excute "./hybrid_server"
+## How to execute
+You should execute "./hybrid_server"
 
-If you excute this and you get "bind() failed.(98) select() failed.",
-you should excute following command.
+If you execute this and you get "bind() failed.(98) select() failed.",
+you should execute following command.
 
 ps aux | grep server
 
